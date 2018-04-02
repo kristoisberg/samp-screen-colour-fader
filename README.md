@@ -3,7 +3,7 @@
 
 ## Introduction
 
-This include lets you . Until today I was using a modified version of Joe Staff's fader include, but since it was using a separate argument for each part of an RGBA colour and the original was outdated in general, I decided to create my own. Here's what I came up with.
+This include lets you add a add a colour filter to players' screens and fade between them. Until today I was using a modified version of Joe Staff's fader include, but since it was using a separate argument for each part of an RGBA colour and the original was outdated in general, I decided to create my own. Here's what I came up with.
 
 
 ## Functions
