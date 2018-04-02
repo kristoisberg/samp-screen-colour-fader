@@ -48,7 +48,7 @@ stock SetPlayerScreenColour(playerid, colour)
 
 
 stock GetPlayerScreenColour(playerid)
-    return IsPlayerConnected(playerid) ? ScreenColour[playerid] : 0xFFFFFF00;
+    return IsPlayerConnected(playerid) ? ScreenColour[playerid] : 0x00000000;
 
 
 static stock _KillScreenColourFadeTimer(playerid)
@@ -127,7 +127,7 @@ public OnPlayerConnect(playerid)
     PlayerTextDrawLetterSize(playerid, ScreenColourTD[playerid], 0.0, 50.0);
     PlayerTextDrawUseBox(playerid, ScreenColourTD[playerid], true);
     
-    _SetPlayerScreenColour(playerid, 0xFFFFFF00);
+    _SetPlayerScreenColour(playerid, 0x00000000);
     
     #if defined SCF_OnPlayerConnect
         return SCF_OnPlayerConnect(playerid);
