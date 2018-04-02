@@ -62,7 +62,7 @@ public OnScreenColourFadeComplete(playerid)
 	if (++counter == 10)
 	    return StopPlayerScreenColourFade(playerid);
 
-    FadePlayerScreenColour(playerid, reverse ? 0xFF0000AA : 0x00000000, 1000, 50);
+    	FadePlayerScreenColour(playerid, reverse ? 0xFF0000AA : 0x00000000, 1000, 50);
 
 	reverse = !reverse;
 
