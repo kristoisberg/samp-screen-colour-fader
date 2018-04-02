@@ -63,6 +63,9 @@ stock FadePlayerScreenColour(playerid, colour, time, steps)
 {
     if (!IsPlayerConnected(playerid) || steps < 1 || time < 0)
         return 0;
+
+    if (ScreenColourFadeData[playerid][sTimer] != -1)
+	    KillTimer(ScreenColourFadeData[playerid][sTimer]);
     
     ScreenColourFadeData[playerid][sOriginalColour] = ScreenColour[playerid];
     ScreenColourFadeData[playerid][sFinalColour] = colour;
