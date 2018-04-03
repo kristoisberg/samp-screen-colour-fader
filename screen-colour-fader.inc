@@ -8,10 +8,6 @@
 #define OnScreenColorFadeComplete   OnScreenColourFadeComplete
 
 
-static ScreenColour[MAX_PLAYERS];
-static PlayerText:ScreenColourTD[MAX_PLAYERS];
-
-
 enum screenColourFadeData
 {
     sSteps,
@@ -22,7 +18,12 @@ enum screenColourFadeData
     
     sTimer,
 }
-static ScreenColourFadeData[MAX_PLAYERS][screenColourFadeData];
+
+static 
+	ScreenColour[MAX_PLAYERS],
+	PlayerText:ScreenColourTD[MAX_PLAYERS],
+	ScreenColourFadeData[MAX_PLAYERS][screenColourFadeData]
+;
 
 
 forward public OnScreenColourFadeComplete(playerid);
