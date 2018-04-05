@@ -19,6 +19,7 @@ enum screenColourFadeData
     sTimer,
 }
 
+
 static 
 	ScreenColour[MAX_PLAYERS],
 	PlayerText:ScreenColourTD[MAX_PLAYERS],
