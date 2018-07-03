@@ -4,6 +4,7 @@
 	"entry": "test.pwn",
 	"output": "test.amx",
 	"dependencies": [
-		"sampctl/samp-stdlib"
+		"sampctl/samp-stdlib",
+		"kristoisberg/colour-manipulation"
 	]
 }
