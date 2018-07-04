@@ -105,7 +105,7 @@ public ScreenColourFadeTimer(playerid) {
         return 1;
     }
 
-    _SetPlayerScreenColour(playerid, LerpColour(ScreenColourFadeData[playerid][sOriginalColour], ScreenColourFadeData[playerid][sFinalColour], ScreenColourFadeData[playerid][sCurrentStep] / ScreenColourFadeData[playerid][sSteps]));
+    _SetPlayerScreenColour(playerid, InterpolateColours(ScreenColourFadeData[playerid][sOriginalColour], ScreenColourFadeData[playerid][sFinalColour], ScreenColourFadeData[playerid][sCurrentStep] / ScreenColourFadeData[playerid][sSteps]));
 
     ScreenColourFadeData[playerid][sCurrentStep]++;
     return 1;
