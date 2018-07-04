@@ -1,13 +1,24 @@
 # Screen Colour Fader
 
+This library lets you add colour filters to players' screens and fade between them. Until today I was using a modified version of Joe Staff's fader include, but since it was using a separate argument for each part of an RGBA colour and the original was outdated in general, I decided to create my own. Here's what I came up with.
 
-## Introduction
 
-This include lets you add colour filters to players' screens and fade between them. Until today I was using a modified version of Joe Staff's fader include, but since it was using a separate argument for each part of an RGBA colour and the original was outdated in general, I decided to create my own. Here's what I came up with.
+## Installation
+
+Simply install to your project:
+
+```bash
+sampctl package install kristoisberg/screen-colour-fader
+```
+
+Include in your code and begin using the library:
+
+```pawn
+#include <screen-colour-fader>
+```
 
 
 ## Functions
-
 
 ```pawn
 native SetPlayerScreenColour(playerid, colour);
@@ -30,6 +41,7 @@ native StopPlayerScreenColourFade(playerid);
 ```
 Stops the ongoing fade. The colour of the player's screen will remain as it is at the time of the function call. Returns `1` if the specified player is connected and has an ongoing fade or `0` if not.
 
+
 ## Callbacks
 
 ```pawn
@@ -49,20 +61,19 @@ The following piece of code fades the player's screen to red and back to transpa
 ```pawn
 new bool:reverse, counter;
 
-public OnPlayerConnect(playerid)
-{
+public OnPlayerConnect(playerid) {
 	SetPlayerScreenColour(playerid, 0x00000000);
 	FadePlayerScreenColour(playerid, 0xFF0000AA, 1000, 25);
 	return 1;
 }
 
 
-public OnScreenColourFadeComplete(playerid)
-{
-	if (++counter == 10)
+public OnScreenColourFadeComplete(playerid) {
+	if (++counter == 10) {
 	    return 1;
+	}
 
-    	FadePlayerScreenColour(playerid, reverse ? 0xFF0000AA : 0x00000000, 1000, 50);
+    FadePlayerScreenColour(playerid, reverse ? 0xFF0000AA : 0x00000000, 1000, 50);
 
 	reverse = !reverse;
 
