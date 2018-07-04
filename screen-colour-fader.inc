@@ -7,11 +7,11 @@
 #define _SCF_included
 
 
-#define SetPlayerScreenColor 		SetPlayerScreenColour
-#define GetPlayerScreenColor 		GetPlayerScreenColour
-#define FadePlayerScreenColor 		FadePlayerScreenColour
-#define StopPlayerScreenColorFade 	StopPlayerScreenColourFade
-#define OnScreenColorFadeComplete   OnScreenColourFadeComplete
+#define SetPlayerScreenColor SetPlayerScreenColour
+#define GetPlayerScreenColor GetPlayerScreenColour
+#define FadePlayerScreenColor FadePlayerScreenColour
+#define StopPlayerScreenColorFade StopPlayerScreenColourFade
+#define OnScreenColorFadeComplete OnScreenColourFadeComplete
 
 
 enum screenColourFadeData {
