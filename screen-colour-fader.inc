@@ -1,10 +1,11 @@
-#include <a_samp>
-#include <colour-manipulation>
-
 #if defined _SCF_included
     #endinput
 #endif
 #define _SCF_included
+
+
+#include <a_samp>
+#include <colour-manipulation>
 
 
 #define SetPlayerScreenColor SetPlayerScreenColour
