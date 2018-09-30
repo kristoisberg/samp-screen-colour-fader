@@ -1,10 +1,10 @@
 {
 	"user": "kristoisberg",
-	"repo": "screen-colour-fader",
+	"repo": "samp-screen-colour-fader",
 	"entry": "test.pwn",
 	"output": "test.amx",
 	"dependencies": [
 		"sampctl/samp-stdlib",
-		"kristoisberg/colour-manipulation"
+		"kristoisberg/pawn-colour-manipulation"
 	]
 }

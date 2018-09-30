@@ -1,4 +1,4 @@
-# Screen Colour Fader
+# SA-MP Screen Colour Fader
 
 This library lets you add colour filters to players' screens and fade between them. Until today I was using a modified version of Joe Staff's fader include, but since it was using a separate argument for each part of an RGBA colour and the original was outdated in general, I decided to create my own. Here's what I came up with.
 
@@ -8,7 +8,7 @@ This library lets you add colour filters to players' screens and fade between th
 Simply install to your project:
 
 ```bash
-sampctl package install kristoisberg/screen-colour-fader
+sampctl package install kristoisberg/samp-screen-colour-fader
 ```
 
 Include in your code and begin using the library:
@@ -56,7 +56,7 @@ forward public OnScreenColourFadeComplete(playerid);
 
 ## Example
 
-The following piece of code fades the player's screen to red and back to transparent five times.
+The following piece of code (also available in test.pwn) fades the player's screen to red and back to transparent five times.
 
 ```pawn
 new bool:reverse, counter;
@@ -80,3 +80,14 @@ public OnScreenColourFadeComplete(playerid) {
 	return 1;
 }
 ```
+
+
+## Testing
+
+To test, simply run the package:
+
+```bash
+sampctl package run
+```
+
+And connect to `localhost:7777` to test.
