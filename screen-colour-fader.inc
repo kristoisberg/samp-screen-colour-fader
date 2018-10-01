@@ -148,7 +148,7 @@ public OnPlayerDisconnect(playerid, reason) {
     }
 
     #if defined SCF_OnPlayerDisconnect
-        return SCF_OnPlayerDisconnect(playerid);
+        return SCF_OnPlayerDisconnect(playerid, reason);
     #else
         return 1;
     #endif
