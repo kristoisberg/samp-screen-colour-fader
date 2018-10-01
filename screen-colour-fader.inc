@@ -28,7 +28,7 @@ enum screenColourFadeData {
 
 static
     ScreenColour[MAX_PLAYERS],
-    PlayerText:ScreenColourTD[MAX_PLAYERS],
+    Text:ScreenColourTD,
     ScreenColourFadeData[MAX_PLAYERS][screenColourFadeData]
 ;
 
@@ -39,8 +39,8 @@ forward public OnScreenColourFadeComplete(playerid);
 static stock _SetPlayerScreenColour(playerid, colour) {
     ScreenColour[playerid] = colour;
 
-    PlayerTextDrawBoxColor(playerid, ScreenColourTD[playerid], ScreenColour[playerid]);
-    PlayerTextDrawShow(playerid, ScreenColourTD[playerid]);
+    TextDrawBoxColor(ScreenColourTD, ScreenColour[playerid]);
+    TextDrawShowForPlayer(playerid, ScreenColourTD);
 }
 
 
@@ -113,13 +113,33 @@ public ScreenColourFadeTimer(playerid) {
 }
 
 
+public OnGameModeInit() {
+    ScreenColourTD = TextDrawCreate(0.0, 0.0, "_");
+    TextDrawTextSize(ScreenColourTD, 640.0, 480.0);
+    TextDrawLetterSize(ScreenColourTD, 0.0, 50.0);
+    TextDrawUseBox(ScreenColourTD, true);
+
+    #if defined SCF_OnGameModeInit
+        return SCF_OnGameModeInit();
+    #else
+        return 1;
+    #endif
+}
+
+#if defined _ALS_OnGameModeInit
+    #undef OnGameModeInit
+#else
+    #define _ALS_OnGameModeInit
+#endif
+#define OnGameModeInit SCF_OnGameModeInit
+
+#if defined SCF_OnGameModeInit
+    forward SCF_OnGameModeInit();
+#endif
+
+
 public OnPlayerConnect(playerid) {
     ScreenColourFadeData[playerid][sTimer] = -1;
-
-    ScreenColourTD[playerid] = CreatePlayerTextDraw(playerid, 0.0, 0.0, "_");
-    PlayerTextDrawTextSize(playerid, ScreenColourTD[playerid], 640.0, 480.0);
-    PlayerTextDrawLetterSize(playerid, ScreenColourTD[playerid], 0.0, 50.0);
-    PlayerTextDrawUseBox(playerid, ScreenColourTD[playerid], true);
 
     _SetPlayerScreenColour(playerid, 0x00000000);
 
