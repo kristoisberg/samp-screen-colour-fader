@@ -22,7 +22,7 @@ enum screenColourFadeData {
     sOriginalColour,
     sFinalColour,
 
-    sTimer,
+    sTimer
 }
 
 
@@ -55,7 +55,11 @@ stock SetPlayerScreenColour(playerid, colour) {
 
 
 stock GetPlayerScreenColour(playerid) {
-    return IsPlayerConnected(playerid) ? ScreenColour[playerid] : 0x00000000;
+    if (!IsPlayerConnected(playerid)) {
+        return 0x00000000;
+    }
+
+    return ScreenColour[playerid];
 }
 
 
