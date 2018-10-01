@@ -3,6 +3,10 @@
 
 new bool:reverse, counter;
 
+
+main() {}
+
+
 public OnPlayerConnect(playerid) {
 	SetPlayerScreenColour(playerid, 0x00000000);
 	FadePlayerScreenColour(playerid, 0xFF0000AA, 1000, 25);
